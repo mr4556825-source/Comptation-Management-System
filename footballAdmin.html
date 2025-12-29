@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Admin - Control Panel</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="football.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="adminNav">
+            <li class="nav-item"><button class="nav-link active" data-target="registration-control">Registration Control</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="manage-players">Manage Players</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="draw-generator">Draw Generator</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="league-rank">League Rank</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+            
+            <!-- SECTION 1: Registration Control (Set Dates) -->
+            <section id="registration-control" class="admin-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">Registration Settings</h2>
+                    <p class="text-secondary small">start and end regestration for users.</p>
+                </div>
+                <button id="toggleRegistration" class="btn btn-danger w-100 mt-3">
+                    Toggle Registration
+                </button>
+
+            </section>
+
+            <!-- SECTION 2: Manage Players (With Delete Option) -->
+            <section id="manage-players" class="admin-tab-content d-none">
+                <h3 class="mb-4 text-primary fw-bold border-bottom pb-2">Active Registrations</h3>
+                <div id="admin-players-list" class="list-group">
+                    <!-- Dynamic List of Players with Delete Buttons -->
+                </div>
+            </section>
+
+            <!-- SECTION 3: Draw Generator -->
+            <section id="draw-generator" class="admin-tab-content d-none text-center py-5">
+                <h2 class="text-warning fw-bold mb-4">Championship Draw</h2>
+                <p class="text-secondary mb-4">Once registration is closed, click below to generate matches.</p>
+                <button id="btnRunDraw" class="btn btn-warning btn-lg px-5 fw-bold">Generate Random Draw</button>
+                <div id="drawResults" class="mt-5 text-white"></div>
+                <div id="admin-draw-results" class="mt-4"></div>
+
+            </section>
+
+            <!-- SECTION 4: Rank (Optional Admin View) -->
+            <section id="league-rank" class="admin-tab-content d-none">
+                <h3 class="text-info fw-bold">League Standings</h3>
+                <p class="text-secondary">View and edit team points here.</p>
+            </section>
+        <div class="text-center mt-3">
+            <a href="admin.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+        </div>
+        </div>
+    </div>
+
+    <script type="module" src="footballAdmin.js"></script>
+</body>
+</html>

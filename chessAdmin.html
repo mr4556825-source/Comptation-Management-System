@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Admin - Grandmaster Hub</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- تأكد من إنشاء ملف chess.css أو تغيير المسار لملف الاستايل الخاص بك -->
+    <link rel="stylesheet" href="chess.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- التنقل بين التابات -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="adminNav">
+            <li class="nav-item"><button class="nav-link active" data-target="chess-settings">Settings</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="manage-players">Manage Players</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="admin-matches">Match Control</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="admin-ranking">Leaderboard</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+
+            <!-- 1. Settings Section (فتح/قفل التسجيل) -->
+            <section id="chess-settings" class="admin-tab-content">
+                <h3 class="text-primary fw-bold mb-4">Tournament Settings</h3>
+                <!-- زرار التوجل اللي لونه وكلامه هيتغير من الـ JS -->
+                <button id="toggleRegistration" class="btn btn-outline-primary w-100 py-3 fw-bold">
+                    Checking Status...
+                </button>
+            </section>
+
+            <!-- 2. Manage Players Section (حذف اللاعبين) -->
+            <section id="manage-players" class="admin-tab-content d-none">
+                <h3 class="text-primary fw-bold mb-4">Players Roster</h3>
+                <div id="admin-players-list" class="list-group">
+                    <!-- الـ JS هيملى قائمة اللاعبين هنا -->
+                </div>
+            </section>
+
+            <!-- 3. Match Control Section (توليد القرعة وتسجيل النتائج) -->
+            <section id="admin-matches" class="admin-tab-content d-none">
+                <h3 class="text-primary fw-bold mb-4">Board Battles</h3>
+                <div id="admin-match-list" class="mb-3">
+                    <!-- الـ JS هيملى الماتشات هنا (نظام أزرار الفوز) -->
+                </div>
+                <!-- زرار توليد القرعة -->
+                <button id="btnRunDraw" class="btn btn-outline-primary w-100 py-3 fw-bold">Generate New Draw</button>
+            </section>
+
+            <!-- 4. Leaderboard Section (جدول الترتيب) -->
+            <section id="admin-ranking" class="admin-tab-content d-none">
+                <h3 class="text-primary fw-bold mb-4">Grandmasters Ranking</h3>
+                <div id="admin-leaderboard-container">
+                    <!-- الـ JS هيملى الجدول هنا -->
+                </div>
+            </section>
+        <div class="text-center mt-3">
+            <a href="admin.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+        </div>
+        </div>
+    </div>
+
+    <!-- التنبيهات (Toasts) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <!-- تأكد من أن اسم ملف الـ JS هو chessAdmin.js -->
+    <script src="chessAdmin.js"></script>
+</body>
+
+</html>

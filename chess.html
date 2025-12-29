@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Tournament - We School</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="chess.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="chessNav">
+            <li class="nav-item">
+                <button class="nav-link active" data-target="register">Register Player</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="players">Registered Players</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="matches">Draws & Matches</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="ranking">Ranking</button>
+            </li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+
+            <!-- 0. REGISTER SECTION -->
+            <section id="register" class="chess-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">Chess Registration</h2>
+                    <p class="text-secondary">Join the official 2025 tournament</p>
+                </div>
+                <form id="playerRegistrationForm">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small">Player Username</label>
+                        <input type="text" class="form-control custom-input" id="playerName"
+                            placeholder="e.g., Magnus Carlsen" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small">Main Password</label>
+                        <input type="password" class="form-control custom-input" id="playerPassword"
+                            placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small">Your Class</label>
+                        <select class="form-select custom-input" id="playerClass" required>
+                            <option value="" selected disabled>Select your class</option>
+                            <option value="A1">Class A1</option>
+                            <option value="A2">Class A2</option>
+                            <option value="A3">Class A3</option>
+                            <option value="A4">Class A4</option>
+                            <option value="A5">Class A5</option>
+                            <option value="A6">Class A6</option>
+                            <option value="A7">Class A7</option>
+                            <option value="A8">Class A8</option>
+                            <option value="B1">Class B1</option>
+                            <option value="B2">Class B2</option>
+                            <option value="B3">Class B3</option>
+                            <option value="B4">Class B4</option>
+                            <option value="B5">Class B5</option>
+                            <option value="B6">Class B6</option>
+                            <option value="B7">Class B7</option>
+                            <option value="B8">Class B8</option>
+                            <option value="C1">Class C1</option>
+                            <option value="C2">Class C2</option>
+                            <option value="C3">Class C3</option>
+                            <option value="C4">Class C4</option>
+                            <option value="C5">Class C5</option>
+                            <option value="C6">Class C6</option>
+                            <option value="C7">Class C7</option>
+                            <option value="C8">Class C8</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 btn-glow">Confirm Registration</button>
+                </form>
+            </section>
+
+            <!-- 1. PLAYERS SECTION -->
+            <section id="players" class="chess-tab-content d-none">
+                <h3 class="mb-4 text-primary fw-bold border-bottom pb-2">Entry List</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playersTableBody">
+                            <!-- JS Injected Data -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 2. MATCHES SECTION -->
+            <section id="matches" class="chess-tab-content d-none">
+                <h3 class="mb-4 text-primary fw-bold border-bottom pb-2">Tournament Draws</h3>
+                <div class="match-list">
+                    <!-- JS Injected Match Data -->
+                </div>
+            </section>
+
+            <!-- 3. RANKING SECTION -->
+            <!-- 3. RANKING SECTION -->
+            <section id="ranking" class="chess-tab-content d-none">
+                <h3 class="mb-2 text-primary fw-bold border-bottom pb-2">Hall of Fame</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th> <!-- المركز -->
+                                <th>Player</th> <!-- اللاعب -->
+                                <th>P</th> <!-- المباريات -->
+                                <th>W</th> <!-- الفوز -->
+                                <th>L</th> <!-- الخسارة -->
+                            </tr>
+                        </thead>
+                        <tbody id="rankingTableBody">
+                            <!-- البيانات سيتم إدراجها هنا بواسطة JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+        </div>
+                <div class="text-center mt-3">
+                    <a href="user.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+                </div>
+                </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="chess.js"></script>
+</body>
+
+</html>

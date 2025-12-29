@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Hub - Elite Dashboard</title>
+    <!-- استبدل المسارات بملفاتك المحلية إذا لزم الأمر -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- Navbar ستايل زجاجي عائم -->
+    <nav class="navo navbar px-4 sticky-top text-light">
+        <h1 class="m-0 fs-3 fw-bold">Welcome, <span id="username-user" class="text-success">Player</span>!</h1>
+        <ul class="list-unstyled d-flex gap-4 mb-0 mx-auto fs-5 nav-links">
+            <li data-target="sports" class="active">Sports</li>
+            <li data-target="competitions">Competitions</li>
+        </ul>
+        <button id="logout-user-btn" class="btn btn-outline-danger btn-sm px-3">Logout</button>
+    </nav>
+
+    <!-- SECTION 1: SPORTS -->
+    <section id="sports" class="content-section py-5">
+        <div class="header w-100 text-center mb-5">
+            <h2 class="text-primary display-4 fw-bold text-glow">Available Sports</h2>
+            <p class="text-secondary">Master your skills in professional arenas</p>
+        </div>
+        <div class="container-fluid px-5">
+            <div class="row justify-content-center g-4">
+                <!-- Football -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 cardo" id="football">
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">Football</h3>
+                            <p class="card-text text-capitalize">Join the league, lead your team to victory and win the
+                                golden cup.</p>
+                            <a href="footballAdmin.html" class="btn btn-primary w-100">Enter Field</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chess -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 cardo" id="chess">
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">Chess</h3>
+                            <p class="card-text text-capitalize">Battle of minds. Move your pieces strategically to win
+                                the championship.</p>
+                            <a href="chessAdmin.html" class="btn btn-primary w-100">Make Your Move</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Volleyball -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 cardo" id="volleyball">
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">Volleyball</h3>
+                            <p class="card-text text-capitalize">High jumps and powerful spikes. Join the elite
+                                volleyball league now.</p>
+                            <a href="volleyballAdmin.html" class="btn btn-primary w-100">Join Match</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Handball -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 cardo" id="handball">
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">Handball</h3>
+                            <p class="card-text text-capitalize">Speed and strength combined. Join the handball league
+                                and conquer the court.</p>
+                            <a href="handballAdmin.html" class="btn btn-primary w-100">Join League</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arm Wrestling -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 cardo" id="armwrestling">
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">Arm Wrestling</h3>
+                            <p class="card-text text-capitalize">Pure strength. Wrestle with your arms and prove you are
+                                the strongest.</p>
+                            <a href="armwrestlingAdmin.html" class="btn btn-primary w-100">Flex Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ACTIVITIES -->
+    <!-- SECTION 3: COMPETITIONS -->
+    <section id="competitions" class="content-section py-5 d-none">
+        <div class="header w-100 text-center mb-5">
+            <h2 class="text-warning display-4 fw-bold">Hall of Fame</h2>
+        </div>
+        <div class="container py-5 text-center">
+            <div class="p-5 border border-warning rounded-5 bg-dark-glass shadow-lg mx-auto" style="max-width: 800px;">
+                <h1 class="text-warning display-3 fw-bold mb-4">Summer Cup 2025</h1>
+                <p class="fs-4 text-light">Grand Prizes and glory await the winning teams!</p>
+                <hr class="border-secondary my-4">
+                <a href="edutechAdmin.html" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark">Register Your Team</a>
+            </div>
+        </div>
+    </section>
+    <script src="admin.js"></script>
+
+    <script src="bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handball League - We School</title>
+    <!-- تأكد من مسار ملفاتك -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="handball.css">
+</head>
+
+<body>
+
+    <div class="main-container w-100">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="handballNav">
+            <li class="nav-item">
+                <button class="nav-link active" data-target="register">Registration</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="teams">Teams & Squads</button>
+            </li>
+            <!-- التابات الإضافية لعرض المباريات والترتيب -->
+            <li class="nav-item"><button class="nav-link" data-target="draws">Draws & Matches</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="dashboard">League Dashboard</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg mx-auto">
+            <!-- 0. REGISTER SECTION -->
+            <section id="register" class="handball-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-orange text-uppercase">Handball Registration</h2>
+                    <p class="text-secondary small">Power and Speed. Sign up your players here.</p>
+                </div>
+                <form id="handballRegistrationForm">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small">Full Name</label>
+                        <input type="text" class="form-control custom-input" id="playerName" placeholder="Your name"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small">Secret Password</label>
+                        <input type="password" class="form-control custom-input" id="playerPassword"
+                            placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small">Team (Class)</label>
+                        <select class="form-select custom-input" id="playerClass" required>
+                            <option value="" selected disabled>Select your class</option>
+                            <!-- أضف كل الفصول من A1 لـ C8 هنا -->  
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-orange w-100">Register Player</button>
+                </form>
+            </section>
+
+            <!-- 1. TEAMS SECTION (Dynamic) -->
+            <section id="teams" class="handball-tab-content d-none">
+                <h3 class="mb-4 text-orange fw-bold border-bottom pb-2">Tournament Squads</h3>
+                <!-- استخدم هذا الـ div لعرض الكروت بشكل متجاوب -->
+                <div class="teams-grid">
+                    <!-- Class A -->
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A1</h5>
+                        <ul id="team-A1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A2</h5>
+                        <ul id="team-A2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A3</h5>
+                        <ul id="team-A3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A4</h5>
+                        <ul id="team-A4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A5</h5>
+                        <ul id="team-A5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A6</h5>
+                        <ul id="team-A6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A7</h5>
+                        <ul id="team-A7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A8</h5>
+                        <ul id="team-A8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    
+                    <!-- Class B -->
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B1</h5>
+                        <ul id="team-B1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B2</h5>
+                        <ul id="team-B2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B3</h5>
+                        <ul id="team-B3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B4</h5>
+                        <ul id="team-B4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B5</h5>
+                        <ul id="team-B5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B6</h5>
+                        <ul id="team-B6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B7</h5>
+                        <ul id="team-B7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B8</h5>
+                        <ul id="team-B8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    
+                    <!-- Class C -->
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C1</h5>
+                        <ul id="team-C1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C2</h5>
+                        <ul id="team-C2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C3</h5>
+                        <ul id="team-C3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C4</h5>
+                        <ul id="team-C4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C5</h5>
+                        <ul id="team-C5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C6</h5>
+                        <ul id="team-C6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C7</h5>
+                        <ul id="team-C7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C8</h5>
+                        <ul id="team-C8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. DRAWS & MATCHES SECTION (Static Placeholder) -->
+            <section id="draws" class="handball-tab-content d-none">
+                <h3 class="mb-4 text-orange fw-bold border-bottom pb-2">Fixtures & Results</h3>
+                    <!-- Sample score input -->
+                <div class="match-list">
+    <!-- القرعة هتظهر هنا -->
+                </div>
+
+            </section>
+
+            <!-- 3. LEAGUE DASHBOARD (Static Placeholder) -->
+            <section id="dashboard" class="handball-tab-content d-none">
+                <h3 class="mb-4 text-orange fw-bold border-bottom pb-2">Handball Standings</h3>
+                <table class="table table-dark table-hover custom-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Team</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-tbody">
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="user.html" class="simple-back-link">← Return to Dashboard</a>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="handball.js"></script>
+</body>
+
+</html>

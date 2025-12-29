@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDU TECH 2025 - Innovation Competition</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="edutech.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- التابات بنفس ستايل الشطرنج -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="eduNav">
+            <li class="nav-item"><button class="nav-link active" data-target="register">Apply</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="participants">Competitors</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="winner">Winner</button></li>
+            <li class="nav-item d-none" id="certTab"><button class="nav-link"
+                    data-target="certificate">Certificate</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+            <!-- 1. تاب التسجيل -->
+            <section id="register" class="edu-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-dark-red">EDU TECH 2025</h2>
+                    <p class="text-secondary small">Submit your innovative project</p>
+                </div>
+                <form id="eduRegistrationForm">
+                    <div class="mb-3">
+                        <label class="small text-secondary">Username</label>
+                        <input type="text" class="form-control custom-input" id="eduName" placeholder="Full Name"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="small text-secondary">Password</label>
+                        <input type="password" class="form-control custom-input" id="eduPassword" placeholder="••••••••"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="small text-secondary">Class</label>
+                        <input type="text" class="form-control custom-input" id="eduClass" placeholder="e.g. A1"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="small text-secondary">Project Description</label>
+                        <textarea class="form-control custom-input" id="eduDesc" rows="3"
+                            placeholder="Briefly explain your project..." required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="small text-secondary">Project Link (Optional)</label>
+                        <input type="url" class="form-control custom-input" id="eduLink"
+                            placeholder="GitHub, Drive, or Website link">
+                    </div>
+                    <button type="submit" class="btn btn-glow w-100 py-2">Submit Application</button>
+                </form>
+            </section>
+
+            <!-- 2. تاب المشاركين -->
+            <section id="participants" class="edu-tab-content d-none">
+                <h3 class="mb-4 text-dark-red fw-bold border-bottom pb-2">Competitors List</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+                        <tbody id="participantsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. تاب الفائز -->
+            <section id="winner" class="edu-tab-content d-none text-center">
+                <h3 class="mb-4 text-dark-red fw-bold border-bottom pb-2">Tournament Champion</h3>
+                <div id="winnerInfo" class="py-5">
+                    <h4 class="text-secondary">Winner will be announced soon...</h4>
+                </div>
+            </section>
+
+            <!-- 4. تاب الشهادة (يظهر للفائز فقط) -->
+            <!-- سكشن الشهادة في EDU TECH -->
+            <section id="certificate" class="edu-tab-content d-none text-center">
+                <div id="certArea" class="certificate-wrapper">
+                    <!-- الصورة الجاهزة بتاعتك -->
+                    <img src="certificate.jpeg" id="certTemplate" alt="Certificate" class="img-fluid shadow-lg">
+            
+                    <!-- الاسم اللي هيظهر فوق الصورة -->
+                    <div id="winnerCertName" class="winner-name-overlay">PLAYER NAME</div>
+                </div>
+            
+                <div class="mt-4">
+                    <button class="btn btn-glow px-5" id="downloadBtn">Download Certificate 📥</button>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="user.html" class="text-secondary text-decoration-none small">← Back to Hub</a>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="edutech.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDU TECH Admin - Control Panel</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .content-box {
+            background-color: #0a0a0a;
+            border: 1px solid #4a0000;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .nav-pills .nav-link {
+            color: #888;
+            margin: 0 5px;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #4a0000 !important;
+            color: #fff !important;
+            border: 1px solid #ff0000;
+        }
+
+        .project-card {
+            background-color: #000;
+            border: 1px solid #4a0000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-winner {
+            background-color: #ffd700;
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-winner:hover {
+            background-color: #ffaa00;
+        }
+
+        .btn-close-reg {
+            background-color: #4a0000;
+            color: white;
+            border: 1px solid #ff0000;
+        }
+
+        .text-dark-red {
+            color: #8b0000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <ul class="nav nav-pills mb-4 justify-content-center">
+            <li class="nav-item"><button class="nav-link active" data-target="settings">Settings</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="manage-projects">Manage Projects</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="winner-status">Winner Info</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+            <!-- 1. إعدادات المسابقة -->
+            <section id="settings" class="admin-tab-content">
+                <h3 class="text-dark-red fw-bold mb-4">Competition Control</h3>
+                <button id="toggleRegistration" class="btn btn-close-reg w-100 py-3 fw-bold mb-3">Checking
+                    Status...</button>
+                <p class="text-secondary small text-center">Use this to open or close the submission portal.</p>
+            </section>
+
+            <!-- 2. إدارة المشاريع واختيار الفائز -->
+            <section id="manage-projects" class="admin-tab-content d-none">
+                <h3 class="text-dark-red fw-bold mb-4">Project Submissions</h3>
+                <div id="admin-projects-list">
+                    <!-- المشاريع هتظهر هنا -->
+                </div>
+            </section>
+
+            <!-- 3. عرض بيانات الفائز الحالي -->
+            <section id="winner-status" class="admin-tab-content d-none text-center">
+                <h3 class="text-dark-red fw-bold mb-4">Current Champion</h3>
+                <div id="currentWinnerDisplay" class="p-4 border border-warning rounded">
+                    <h4 class="text-secondary">No winner selected yet.</h4>
+                </div>
+            </section>
+                <div class="text-center mt-3">
+                    <a href="admin.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+                </div>
+        </div>
+    </div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="edutechAdmin.js"></script>
+</body>
+
+</html>

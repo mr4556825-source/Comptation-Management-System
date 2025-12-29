@@ -1,0 +1,171 @@
+/* الإعدادات الأساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* الكارت الرئيسي */
+.main-card {
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 950px;
+    width: 95%;
+
+}
+#wraper {
+    z-index: 1;
+} 
+
+/* ستايل اللوجو */
+.logo-wrapper {
+    background: linear-gradient(45deg, #050505, #111);
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+    z-index: 2;
+}
+
+.glow-sphere {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.2), transparent 70%);
+    filter: blur(45px);
+    animation: pulse 4s infinite alternate;
+}
+
+.floating-box {
+    animation: float 5s ease-in-out infinite;
+    z-index: 5;
+}
+
+.creative-logo {
+    max-width: 160px;
+    filter: drop-shadow(0 0 20px rgba(13, 110, 253, 0.4));
+    transition: 0.5s;
+}
+
+.brand-name {
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-top: 20px;
+}
+
+.brand-name span {
+    color: #0d6efd;
+}
+
+.brand-tagline {
+    color: #555;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ستايل الفورم */
+.bg-glass-form {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.form-title {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    border-radius: 15px !important;
+    padding: 12px 20px !important;
+}
+
+.custom-input:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.2) !important;
+}
+
+.error-msg {
+    color: #ff4757;
+    font-size: 0.8rem;
+    min-height: 20px;
+}
+
+.switch-text a {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(1.3);
+        opacity: 0.6;
+    }
+}
+
+/* تحريك العناصر في الديسكتوب فقط (Desktop Animation) */
+@media (min-width: 768px) {
+
+    #wraper,
+    #logo-container {
+        transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+}
+
+/* الموبايل (Mobile Adjustment) */
+@media (max-width: 767px) {
+    .main-card {
+        border-radius: 20px;
+    }
+
+    .logo-wrapper {
+        min-height: 250px;
+    }
+
+    .creative-logo {
+        max-width: 110px;
+    }
+
+    .brand-name {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Wrestling Admin - Control Panel</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="armwrestlingAdmin.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <ul class="nav nav-pills mb-4 justify-content-center" id="adminNav">
+            <li class="nav-item"><button class="nav-link active" data-target="arm-settings">Settings</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="manage-warriors">Manage Players</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="admin-matches">Match Control</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="admin-ranking">Leaderboard</button></li>
+        </ul>
+
+        <div class="content-box shadow-lg">
+            <!-- 1. Settings -->
+            <section id="arm-settings" class="admin-tab-content">
+                <h3 class="text-danger fw-bold mb-4">Arena Settings</h3>
+                <button id="regStatusBtn" class="btn btn-outline-danger w-100 py-3 fw-bold">Checking Status...</button>
+            </section>
+
+            <!-- 2. Manage Warriors -->
+            <section id="manage-warriors" class="admin-tab-content d-none">
+                <h3 class="text-danger fw-bold mb-4">Warriors Roster</h3>
+                <div id="admin-players-list" class="list-group"></div>
+            </section>
+
+            <!-- 3. Match Control -->
+            <section id="admin-matches" class="admin-tab-content d-none">
+                <h3 class="text-danger fw-bold mb-4">Arena Showdowns</h3>
+                <div id="admin-match-list" class="mb-3"></div>
+                <button id="btnRunDraw" class="btn btn-outline-danger w-100 py-3 fw-bold">Generate New Draw</button>
+            </section>
+
+            <!-- 4. Leaderboard -->
+            <section id="admin-ranking" class="admin-tab-content d-none">
+                <h3 class="text-danger fw-bold mb-4">Champions Ranking</h3>
+                <div id="admin-leaderboard-container"></div>
+            </section>
+        <div class="text-center mt-3">
+            <a href="admin.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+        </div>
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="armwrestlingAdmin.js"></script>
+</body>
+
+</html>

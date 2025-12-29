@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Wrestling League - We School</title>
+    <!-- تأكد من تعديل المسارات إلى ملفات Bootstrap و CSS الخاصة بك -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="armwrestling.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navigation Navbar (Tabs) -->
+        <!-- الكلاس d-none تم حذفه من هنا لضمان ظهور الناف بار -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="armNav">
+            <li class="nav-item">
+                <button class="nav-link active" data-target="register">Registration</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="players-list">Warriors List</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="matches">Showdowns</button>
+            </li>
+        </ul>
+
+        <!-- Glass Box Container -->
+        <div class="content-box shadow-lg">
+
+            <!-- 0. REGISTER SECTION (Player Registration Form) -->
+            <section id="register" class="arm-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-danger">Arm Wrestling Registration</h2>
+                    <p class="text-secondary small">Enter the arena using your main credentials!</p>
+                </div>
+                <!-- ID الفورم هو armRegistrationForm عشان يتوافق مع الـ JS -->
+                <form id="armRegistrationForm">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Username</label>
+                        <input type="text" class="form-control custom-input" id="playerName" placeholder="Enter name"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Password</label>
+                        <input type="password" class="form-control custom-input" id="playerPassword"
+                            placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary">Class</label>
+                        <select class="form-select custom-input" id="playerClass">
+                            <option value="" selected disabled>Select your class</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="B3">B3</option>
+                            <option value="B4">B4</option>
+                            <option value="B5">B5</option>
+                            <option value="B6">B6</option>
+                            <option value="B7">B7</option>
+                            <option value="B8">B8</option>
+                            <option value="C1">C1</option>
+                            <option value="C2">C2</option>
+                            <option value="C3">C3</option>
+                            <option value="C4">C4</option>
+                            <option value="C5">C5</option>
+                            <option value="C6">C6</option>
+                            <option value="C7">C7</option>
+                            <option value="C8">C8</option>
+                            <!-- أضف بقية الفصول هنا -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100 btn-glow">Flex & Join</button>
+                </form>
+            </section>
+
+            <!-- 1. PLAYERS SECTION (Dynamic Data) -->
+            <section id="players-list" class="arm-tab-content d-none">
+                <h3 class="mb-4 text-danger fw-bold border-bottom pb-2">Registered Warriors</h3>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover custom-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Matches Played</th>
+                                <th>Wins</th>
+                                <th>Losses</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playersTableBody" class="text-white text-center">
+                            <!-- البيانات سيتم جلبها ديناميكياً بواسطة JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 2. MATCHES SECTION (Static Placeholder) -->
+            <section id="matches" class="arm-tab-content d-none">
+                <h3 class="mb-4 text-danger fw-bold border-bottom pb-2">Upcoming Showdowns</h3>
+                <div class="match-list">
+                    <div class="match-item p-3 mb-3 d-flex justify-content-between align-items-center">
+                        <div class="player-vs">
+                            <span class="fw-bold text-white">The Mountain</span>
+                            <span class="text-danger mx-2">VS</span>
+                            <span class="fw-bold text-white">The Rock</span>
+                        </div>
+                        <span class="badge bg-danger pulse-effect">LIVE</span>
+                    </div>
+                    <!-- أضف مباريات أخرى هنا -->
+                </div>
+            </section>
+        </div>
+        <div class="text-center mt-3">
+            <a href="user.html" class="text-secondary text-decoration-none small">← Back to Main Hub</a>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="armwrestling.js"></script> <!-- تأكد من مسار الـ JS -->
+</body>
+
+</html>

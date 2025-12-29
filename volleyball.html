@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Tournament - We School</title>
+    <!-- تأكد من تعديل المسارات إلى ملفات Bootstrap و CSS الصحيحة -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="volleyball.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 justify-content-center" id="volleyballNav">
+            <li class="nav-item"><button class="nav-link active" data-target="register">Sign Up</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="teams">Team Rosters</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="draws">Match Day</button></li>
+            <li class="nav-item"><button class="nav-link" data-target="dashboard">Leaderboard</button></li>
+        </ul>
+
+        <!-- Content Area -->
+        <div class="content-box shadow-lg">
+
+            <!-- 0. REGISTER SECTION -->
+            <section id="register" class="volleyball-tab-content">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-yellow text-uppercase">Volleyball Player Sign Up</h2>
+                    <p class="text-secondary small">Jump high, spike hard. Join the competition!</p>
+                </div>
+                <form id="volleyballRegistrationForm">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Player Name</label>
+                        <input type="text" class="form-control custom-input" id="playerName" placeholder="Enter Name"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary">Access Key</label>
+                        <input type="password" class="form-control custom-input" id="playerPassword"
+                            placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary">Team Name</label>
+                        <select class="form-select custom-input" id="playerClass">
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="B3">B3</option>
+                            <option value="B4">B4</option>
+                            <option value="B5">B5</option>
+                            <option value="B6">B6</option>
+                            <option value="B7">B7</option>
+                            <option value="B8">B8</option>
+                            <option value="C1">C1</option>
+                            <option value="C2">C2</option>
+                            <option value="C3">C3</option>
+                            <option value="C4">C4</option>
+                            <option value="C5">C5</option>
+                            <option value="C6">C6</option>
+                            <option value="C7">C7</option>
+                            <option value="C8">C8</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-yellow w-100 btn-glow">Register Player</button>
+                </form>
+            </section>
+
+            <section id="teams" class="volleyball-tab-content d-none">
+                <h3 class="mb-4 text-success fw-bold border-bottom pb-2">Teams Formations</h3>
+            
+                <div class="team-list">
+            
+                    <!-- Class A -->
+                    <div class="team-item p-3 mb-3 ">
+                        <h5 class="m-0 text-white">Class A1</h5>
+                        <ul id="team-A1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A2</h5>
+                        <ul id="team-A2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A3</h5>
+                        <ul id="team-A3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A4</h5>
+                        <ul id="team-A4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A5</h5>
+                        <ul id="team-A5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A6</h5>
+                        <ul id="team-A6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A7</h5>
+                        <ul id="team-A7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class A8</h5>
+                        <ul id="team-A8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+            
+                    <!-- Class B -->
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B1</h5>
+                        <ul id="team-B1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B2</h5>
+                        <ul id="team-B2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B3</h5>
+                        <ul id="team-B3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B4</h5>
+                        <ul id="team-B4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B5</h5>
+                        <ul id="team-B5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B6</h5>
+                        <ul id="team-B6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B7</h5>
+                        <ul id="team-B7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class B8</h5>
+                        <ul id="team-B8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+            
+                    <!-- Class C -->
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C1</h5>
+                        <ul id="team-C1" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C2</h5>
+                        <ul id="team-C2" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C3</h5>
+                        <ul id="team-C3" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C4</h5>
+                        <ul id="team-C4" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C5</h5>
+                        <ul id="team-C5" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C6</h5>
+                        <ul id="team-C6" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C7</h5>
+                        <ul id="team-C7" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+                    <div class="team-item p-3 mb-3">
+                        <h5 class="m-0 text-white">Class C8</h5>
+                        <ul id="team-C8" class="list-unstyled mt-2 players-list"></ul>
+                    </div>
+            
+                </div>
+            </section>
+
+            </section>
+            <!-- باقي السكاشن (Matches & Leaderboard) -->
+            <section id="draws" class="volleyball-tab-content d-none">
+                <div class="match-list">
+                    <!-- القرعة هتظهر هنا -->
+                </div>
+            </section>
+
+            <section id="dashboard" class="volleyball-tab-content d-none">
+                <h3 class="mb-4 text-yellow fw-bold">League Standings</h3>
+                <table class="table table-dark custom-volleyball-table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-tbody">
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- زر العودة البسيط للمين هب -->
+        <div class="text-center mt-3">
+            <a href="user.html" class="simple-back-link">← Back to Main Hub</a>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="volleyball.js"></script>
+</body>
+
+</html>

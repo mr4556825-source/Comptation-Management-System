@@ -1,0 +1,238 @@
+/* ================== RESET & GLOBAL ================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --bg-main: #0b0b0b;
+    --bg-dark: #121212;
+    --bg-card: #161616;
+
+    --accent: #3a7bd5;
+    /* أزرق كلاسيك هادي */
+    --accent-soft: #2f5fa8;
+
+    --text-main: #f5f5f5;
+    --text-muted: #b5b5b5;
+    --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+/* ================== BODY ================== */
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at top right, #151515 0%, #0b0b0b 100%);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* ================== NAVBAR ================== */
+.navo {
+    padding: 14px 0;
+    background: rgba(15, 15, 15, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-soft);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    margin: 0 14px;
+    cursor: pointer;
+    color: var(--text-muted);
+    position: relative;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+    color: var(--text-main);
+}
+
+.nav-links li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    display: block;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    margin-top: 6px;
+}
+
+.nav-links li:hover::after,
+.nav-links li.active::after {
+    width: 100%;
+}
+
+/* ================== CONTENT ================== */
+.content-section {
+    flex-grow: 1;
+    padding: 40px 0;
+}
+
+.text-glow {
+    /* Glow خفيف جدًا – شبه معدوم */
+    text-shadow: 0 0 10px rgba(58, 123, 213, 0.25);
+}
+
+/* ================== CARDS ================== */
+.cardo {
+    position: relative;
+    min-height: 380px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 16px !important;
+    overflow: hidden;
+    cursor: pointer;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Dark overlay */
+.cardo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.15));
+    z-index: 1;
+}
+
+/* Hover – بسيط ومحترم */
+.cardo:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* ================== CARD BODY ================== */
+.card-body {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 22px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+/* ================== BUTTON ================== */
+.btn-primary {
+    background: var(--accent) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+    font-weight: 500;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-soft) !important;
+    transform: translateY(-1px);
+}
+
+/* ================== BACKGROUND IMAGES ================== */
+#football {
+    background-image: url(football.jpg);
+}
+
+#chess {
+    background-image: url(chess.jpg);
+}
+
+#handball {
+    background-image: url(handball.jpg);
+}
+
+#volleyball {
+    background-image: url(volleyball.jpg);
+}
+
+#armwrestling {
+    background-image: url(armwrestling.jpg);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px) {
+    .cardo {
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 30px 0;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-section {
+        padding: 20px 0;
+    }
+
+    .cardo {
+        min-height: 280px;
+    }
+
+    .cardo:hover {
+        transform: none;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-body {
+        padding: 18px !important;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+}
