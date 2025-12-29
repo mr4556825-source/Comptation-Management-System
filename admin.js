@@ -50,8 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.removeItem("userRole"); 
 
             // التوجيه لصفحة تسجيل الدخول
-            window.location.href = "form.html";
+            window.location.href = "index.html";
         });
     }
 });
+
 
