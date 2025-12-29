@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         usernameElement.textContent = loggedInUser;
     } else {
         // لو مفيش مستخدم مسجل يرجعه لصفحة اللوجين فوراً
-        window.location.href = "form.html";
+        window.location.href = "index.html";
     }
 
     // === 2. منطق التنقل بين السكاشن (SPA) ===
@@ -54,3 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
